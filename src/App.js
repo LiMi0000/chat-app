@@ -1,12 +1,13 @@
-import './App.css';
+import './style.scss';
+
+import { Register, Login, Home } from './pages';
 
 function App() {
   return (
     <div className="App">
-      <h1>Hello world</h1>
-      <h1>Hello world</h1>
-      <h1>Hello world</h1>
-      <h1>Hello world</h1>
+      {/* <Register /> */}
+      {/* <Login /> */}
+      <Home />
     </div>
   );
 }
