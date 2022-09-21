@@ -1,10 +1,30 @@
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
+}
 
-  // register & login page styling
+@mixin mobile {
+    @media screen and (max-width: 480px) {
+        @content
+    }
+}
+
+@mixin tablet {
+    @media screen and (max-width: 768px) {
+        @content
+    }
+}
+
+@mixin pc {
+    @media screen and (max-width: 1200px) {
+        @content
+    }
+}
+// variables
+// $darkColor: #2f2d52;
+
+//  register & login page styling
 .formContainer{
     background-color: #a7bcff;
     height: 100vh;
@@ -97,10 +117,17 @@
         height: 80%;
         display: flex;
         overflow: hidden;
+        @include tablet {
+            width: 90%;
+        }
 
         .sidebar{
             flex: 1;
             background-color: #3e3c61; 
+            position: relative;
+            @include mobile{
+                display: none;
+            }
 
             .navbar{
                 display: flex;
@@ -113,6 +140,9 @@
 
                 .logo{
                     font-weight: bold;
+                    @include tablet{
+                        display: none;
+                    }
                 }
 
                 .user{
@@ -135,6 +165,12 @@
                         border: none;
                         cursor: pointer;
                         padding: 6px;
+                        border-radius: 10px;
+                        @include tablet {
+                            position: absolute;
+                            bottom: 10px;
+                            left: 10px
+                        }
                     }
                 }
             }
